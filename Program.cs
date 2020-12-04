@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Text;
 
 namespace _20_Lab8 {
 	class Program {
 		static void Main() {
-			Console.OutputEncoding = Encoding.UTF8;  // Обов'язково треба в кожній програмі писати цей рядок.
+			Console.OutputEncoding = System.Text.Encoding.UTF8;
 			Console.Title = "20_Lab8";
 
 			// Використання випадкових чисел прискорює перевірку лабораторної роботи.
@@ -35,11 +34,12 @@ namespace _20_Lab8 {
 			Console.WriteLine();
 
 			Console.WriteLine("А на цьому все! ProtectedArray та ProtectedCharArray у цій програмі не будуть розглядатися, бо їхній принцип роботи здається досить зрозумілим.");
-			Console.WriteLine("Натисніть Enter, щоб продовжити...");
-			while (Console.KeyAvailable)
+			Console.WriteLine("Натисніть будь-яку клавішу, щоб продовжити...");
+
+			while (Console.KeyAvailable) {
 				Console.ReadKey(true);
-			while (Console.ReadKey(true).Key != ConsoleKey.Enter)
-				;
+			}
+			Console.ReadKey(true);
 		}
 	}
 }
