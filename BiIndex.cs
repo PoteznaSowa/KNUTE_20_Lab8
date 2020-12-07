@@ -7,18 +7,27 @@ namespace _20_Lab8 {
 		// за індексом 1 - до поля y,
 		// при інших значеннях індексу видається повідомлення про помилку.
 
-		readonly T x;
-		readonly T y;
+		T x;
+		T y;
 
-		public BiIndex(T x, T y) {
-			this.x = x;
-			this.y = y;
+		public T this[int index] {
+			get => index switch {
+				0 => x,
+				1 => y,
+				_ => throw new IndexOutOfRangeException($"Індекс може бути тільки 0 або 1, але не {index}!")
+			};
+			set {
+				switch (index) {
+				case 0:
+					x = value;
+					return;
+				case 1:
+					y = value;
+					return;
+				default:
+					throw new IndexOutOfRangeException($"Індекс може бути тільки 0 або 1, але не {index}!");
+				}
+			}
 		}
-
-		public T this[int index] => index switch {
-			0 => x,
-			1 => y,
-			_ => throw new IndexOutOfRangeException($"Індекс може бути тільки 0 або 1, але не {index}!")
-		};
 	}
 }

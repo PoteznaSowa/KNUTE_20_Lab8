@@ -7,10 +7,10 @@ namespace _20_Lab8 {
 		// (при негативних значеннях індексу
 		// відлік ведеться в зворотному порядку).
 
-		public DateTime this[int i] => date.AddDays(i);
+		public DateTime this[int i] => Date.AddDays(i);
 
-		readonly DateTime date;
+		public DateTime Date { get; set; }
 
-		public DateObj(DateTime date) => this.date = date;
+		public DateObj(DateTime date) => Date = date;
 	}
 }

@@ -12,7 +12,9 @@ namespace _20_Lab8 {
 			Random random = new Random();
 
 			Console.WriteLine("Перевіряємо клас BiIndex...");
-			BiIndex<int> biIndex = new BiIndex<int>(random.Next(), random.Next());
+			BiIndex<int> biIndex = new BiIndex<int>();
+			biIndex[0] = random.Next();
+			biIndex[1] = random.Next();
 			try {
 				// Для наглядності запустимо цикл з 9999 ітераціями, але не всі ітерації запрацюють.
 				for (int j = 0; j < 9999; j++) {
@@ -27,10 +29,9 @@ namespace _20_Lab8 {
 			Console.WriteLine();
 
 			Console.WriteLine("Перевіряємо клас DateObj...");
-			DateTime currentdate = DateTime.Now;  // Нехай це буде поточна дата.
-			DateObj dateObj = new DateObj(currentdate);
+			DateObj dateObj = new DateObj(DateTime.Now);  // Створити об'єкт з поточною датою.
 			int i = random.Next(-99_999, 100_000);
-			Console.WriteLine($"Зараз {currentdate:D}, i = {i}. i-тий день відносно цієї дати: {dateObj[i]:D}");
+			Console.WriteLine($"Зараз {dateObj.Date:D}, i = {i}. i-тий день відносно цієї дати: {dateObj[i]:D}");
 			Console.WriteLine();
 
 			Console.WriteLine("А на цьому все! ProtectedArray та ProtectedCharArray у цій програмі не будуть розглядатися, бо їхній принцип роботи здається досить зрозумілим.");
