@@ -6,7 +6,6 @@ namespace _20_Lab8 {
 			Console.OutputEncoding = System.Text.Encoding.UTF8;
 			Console.Title = "20_Lab8";
 
-			// Використання випадкових чисел прискорює перевірку лабораторної роботи.
 			Console.WriteLine("Для перевірки класів використовуватимемо довільні цілі числа.");
 			Console.WriteLine();
 			Random random = new Random();
@@ -16,20 +15,18 @@ namespace _20_Lab8 {
 			biIndex[0] = random.Next();
 			biIndex[1] = random.Next();
 			try {
-				// Для наглядності запустимо цикл з 9999 ітераціями, але не всі ітерації запрацюють.
 				for (int j = 0; j < 9999; j++) {
 					Console.Write($"biIndex[{j}] = ");
 					int a = biIndex[j];
 					Console.WriteLine(a);
 				}
 			} catch (Exception e) {
-				// Під час ітерації N виникне виняток, треба показати дані про нього.
 				Console.WriteLine(e);
 			}
 			Console.WriteLine();
 
 			Console.WriteLine("Перевіряємо клас DateObj...");
-			DateObj dateObj = new DateObj(DateTime.Now);  // Створити об'єкт з поточною датою.
+			DateObj dateObj = new DateObj(DateTime.Now);
 			int i = random.Next(-99_999, 100_000);
 			Console.WriteLine($"Зараз {dateObj.Date:D}, i = {i}. i-тий день відносно цієї дати: {dateObj[i]:D}");
 			Console.WriteLine();
